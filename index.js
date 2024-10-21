@@ -19,7 +19,7 @@ app.post("/calculate-frete", async (req, res) => {
 
   const data = {
     from: {
-      postal_code: "79140000", // CEP de origem fixo
+      postal_code: "88330973", // CEP de origem fixo
     },
     to: {
       postal_code: cep, // CEP recebido do cliente
