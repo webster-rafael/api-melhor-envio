@@ -12,7 +12,7 @@ app.use(express.json());
 
 // Rota para calcular frete
 app.post("/calculate-frete", async (req, res) => {
-  const { cep } = req.body;
+  const { cep, weight } = req.body;
 
   const url = "https://melhorenvio.com.br/api/v2/me/shipment/calculate";
   const token = process.env.TOKEN_ACESS;
@@ -25,10 +25,10 @@ app.post("/calculate-frete", async (req, res) => {
       postal_code: cep, // CEP recebido do cliente
     },
     package: {
-      height: 75,
-      width: 100,
+      height: 90,
+      width: 135,
       length: 7,
-      weight: 1,
+      weight: weight,
     },
   };
 
